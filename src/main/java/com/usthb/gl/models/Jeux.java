@@ -6,31 +6,31 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Jeux")
-public class Jeu {
+public class Jeux {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_jeu")
-    @SequenceGenerator(name = "seq_jeu", sequenceName = "seq_jeu", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_jeu")
     private Long idJeu;
 
-    @Column(name = "Description")
+    @Column(name = "description")
     private String description;
 
     @Column(name = "Éditeur", nullable = false)
     private String editeur;
 
-    @Column(name = "Date_sortie", nullable = false)
-    private LocalDateTime dateSortie;
+    @Column(name = "date_sortie", nullable = false)
+    private LocalDateTime date_sortie;
 
-    @Column(name = "Prix", nullable = false)
+    @Column(name = "prix", nullable = false)
     private BigDecimal prix;
 
-    @Column(name = "Catégorie", nullable = false)
+    @Column(name = "catégorie", nullable = false)
     private String categorie;
 
-    @Column(name = "Titre", nullable = false)
+    @Column(name = "titre", nullable = false)
     private String titre;
 
     @OneToOne
-    @JoinColumn(name = "ID_Achat", nullable = false)
+    @JoinColumn(name = "id_achat", nullable = false)
     private Achat achat;
 }

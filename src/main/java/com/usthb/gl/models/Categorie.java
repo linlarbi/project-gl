@@ -10,11 +10,11 @@ import jakarta.persistence.Column;
 public class Categorie {
 
     @Id
-    @Column(name = "ID_Catégorie")
-    private String idCategorie;
+    @Column(name = "id_catégorie")
+    private Long id_catégorie;
 
-    @Column(name = "Nom_Catégorie", nullable = false)
-    private String nomCategorie;
+    @Column(name = "nom_catégorie", nullable = false)
+    private String nom_catégorie;
 }
 
 

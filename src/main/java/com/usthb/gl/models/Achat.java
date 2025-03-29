@@ -8,16 +8,17 @@ import java.time.LocalDateTime;
 @Table(name = "Achats")
 public class Achat {
     @Id
-    private String idAchat;
+    private Long id_achat;
 
-    @Column(name = "Date_achat", nullable = false)
-    private LocalDateTime dateAchat;
+    @Column(name = "date_achat", nullable = false)
+    private LocalDateTime date_achat	;
 
     @ManyToOne
-    @JoinColumn(name = "ID_Utilisateur", nullable = false)
+    @JoinColumn(name = "id_Utilisateur", nullable = false)
     private Utilisateur utilisateur;
 
     @ManyToOne
-    @JoinColumn(name = "ID_Jeu", nullable = false)
-    private Jeu jeu;
+    @JoinColumn(name = "id_Jeu", nullable = false)
+    private Jeux jeux;
+
 }

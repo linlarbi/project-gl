@@ -7,24 +7,24 @@ public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_utilisateur")
     @SequenceGenerator(name = "seq_utilisateur", sequenceName = "seq_utilisateur", allocationSize = 1)
-    private Long idUtilisateur;
+    private Long id_utilisateur;
 
-    @Column(nullable = false)
+    @Column(name = "nom" ,nullable = false)
     private String nom;
 
-    @Column(name = "Prénom", nullable = false)
+    @Column(name = "prénom", nullable = false)
     private String prenom;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "email" ,nullable = false, unique = true)
     private String email;
 
-    @Column(name = "Mot_de_passe", nullable = false, length = 15)
-    private String motDePasse;
+    @Column(name = "mot_de_passe", nullable = false, length = 15)
+    private String mot_de_passe;
 
-    @Column(name = "Date_inscription", nullable = false)
-    private LocalDateTime dateInscription;
+    @Column(name = "date_inscription", nullable = false)
+    private LocalDateTime date_inscription ;
 
     @OneToOne
-    @JoinColumn(name = "ID_Achat", nullable = false)
+    @JoinColumn(name = "id_achat", nullable = false)
     private Achat achat;
 }
